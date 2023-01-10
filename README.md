@@ -10,6 +10,8 @@ To run the scripts in this repository, you will need to have Vitis-AI, TensorFlo
 
 * 'quantise.py': This script is used to quantize the model using the selected strategy.
 * 'run.sh': This script is used to run the quantization process.
+* 'run_eval_fmodel.sh': This script is used to evaluate the model using the COCO dataset.
+* 'run_eval_qmodel.sh': This script is used to evaluate the quantized model using the COCO dataset.
 
 ## Usage
 This script is for running the evaluation of the quantized YOLOv3 model on Vitis-AI using TensorFlow 2.x inside a Docker container.
@@ -36,11 +38,6 @@ Next, it changes the current directory to the code/test directory of the downloa
     bash download_data.sh
     bash convert_data.sh
 
-It runs the scripts run_eval_fmodel.sh and run_eval_qmodel.sh to evaluate the performance of the full-precision and quantized models, respectively. These scripts measure the accuracy of the models on the test dataset and display the results on the command line.
-    
-    bash run_eval_fmodel.sh
-    bash run_eval_qmodel.sh
-
 Please note that the pre-trained model and dataset used in this script might be out-dated and the instruction is for demonstration purpose only, you may need to download the latest model and dataset and adapt the command accordingly.
 
 To run the quantization script and generate the xmodel to delopy on Xilinx FPGA, you can simply execute the command below in your terminal:
@@ -55,6 +52,11 @@ The script will prompt you for the following inputs:
 4.  Name of xmodel output folder (N/n for default folder)
 
 Then the script will execute the 'quantise.py' script and transfer the quantized model into xmodel, and save the xmodel in the specified folder.
+
+Finally, it runs the scripts run_eval_fmodel.sh and run_eval_qmodel.sh to evaluate the performance of the full-precision and quantized models, respectively. These scripts measure the accuracy of the models on the test dataset and display the results on the command line.
+    
+    bash run_eval_fmodel.sh
+    bash run_eval_qmodel.sh
 
 ## Results
 
