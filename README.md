@@ -45,7 +45,7 @@ Please note that the pre-trained model and dataset used in this script might be 
 
 To run the quantization script and generate the xmodel to delopy on Xilinx FPGA, you can simply execute the command below in your terminal:
 
-    ./run.sh
+    ./xmodel_generator.sh
 
 The script will prompt you for the following inputs:
 
