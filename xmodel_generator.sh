@@ -21,7 +21,7 @@ echo "fs: float scale quantisation, mainly used for devices supporting floating-
 echo "fsx: trained quantisation threshold for power-of-2 scale quantisation, mainly used for QAT for DPU now."  
 
 #Decide a quantise strategy
-read -p "Enter your choice of strategy (1)pof2s, (2)pof2s_tqt, (3)fs and (4)fsx: "  quantise_strategy
+read -r -p "Enter your choice of strategy (1)pof2s, (2)pof2s_tqt, (3)fs and (4)fsx: "  quantise_strategy
 if [ "$quantise_strategy" = "1" ]
 then
     quantise_strategy=pof2s
@@ -37,21 +37,21 @@ then
 fi
 
 #Decide a folder contains the image dataset
-read -p "Enter the name of image dataset folder(N/n for default folder): " image_dataset
+read -r -p "Enter the name of image dataset folder(N/n for default folder): " image_dataset
 case ${image_dataset} in 
 N | n)
     image_dataset=testm_val2017
 esac
 
 #Decide a weight name
-read -p "Enter the selected weight name(N/n for default folder): " weight_name
+read -r -p "Enter the selected weight name(N/n for default folder): " weight_name
 case ${weight_name} in 
 N | n)
     weight_name=yolov3.h5
 esac
 
 #Decide the name of xmodel output folder
-read -p "Enter the name of xmodel output folder(N/n for default folder): " xmodel_folder
+read -r -p "Enter the name of xmodel output folder(N/n for default folder): " xmodel_folder
 case ${xmodel_folder} in 
 N | n)
     xmodel_folder=xmodel_folder
