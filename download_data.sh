@@ -20,7 +20,7 @@ echo "Entering ${DATA}..."
 cd ${DATA}
 
 echo "Do you want to download COCO val2017 dataset?"
-read -p "Enter 'Y' or 'y' to download, else use the data you have prepared in ${DATA}: " choice
+read -r -p "Enter 'Y' or 'y' to download, else use the data you have prepared in ${DATA}: " choice
 case ${choice} in
 Y | y)
     echo "Prepare to download COCO trainval2017 anotation zip file..."
